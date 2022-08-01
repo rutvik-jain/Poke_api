@@ -48,7 +48,7 @@ getData() async {
           child: GridView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
-              itemCount: 10,
+              itemCount: 16,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 8,
@@ -74,14 +74,15 @@ getData() async {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(posts!.pokemon[index].name,
-                            style: TextStyle(color: Colors.red),
+                            style: TextStyle(
+                                color: index % 2 == 0 ? Colors.red : Colors.white),
                           ),
                         ),
                       ],
                     )
                   ),
                 );
-              }),
+            }),
         ),
       ),
     );
