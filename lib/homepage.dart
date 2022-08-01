@@ -59,7 +59,8 @@ getData() async {
                     Navigator.push(context, MaterialPageRoute(
                         builder: (BuildContext context){
                           return Details_page(posts!.pokemon[index].id, posts!.pokemon[index].num,
-                              posts!.pokemon[index].name, posts!.pokemon[index].weight, posts!.pokemon[index].img);
+                              posts!.pokemon[index].name, posts!.pokemon[index].weight,
+                            posts!.pokemon[index].img,);
                         }));
                   },
                   child:  Card(
