@@ -48,7 +48,7 @@ getData() async {
           child: GridView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
-              itemCount: posts!.pokemon.length,
+              itemCount: 10,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 8,
