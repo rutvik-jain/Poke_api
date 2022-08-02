@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:poke_api/details_page.dart';
+import 'package:poke_api/detailsPage.dart';
 import 'package:poke_api/services/remote_service.dart';
 import 'models/model.dart';
 
@@ -48,7 +48,7 @@ getData() async {
           child: GridView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
-              itemCount: posts!.pokemon.length,
+              itemCount: posts?.pokemon.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 8,
@@ -58,7 +58,7 @@ getData() async {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(
                         builder: (BuildContext context){
-                          return Details_page(posts!.pokemon[index].id, posts!.pokemon[index].name,
+                          return DetailsPage(posts!.pokemon[index].id, posts!.pokemon[index].name,
                               posts!.pokemon[index].weight, posts!.pokemon[index].img,index);
                         }));
                   },

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Details_page extends StatefulWidget {
+class DetailsPage extends StatefulWidget {
   int id;
   int index;
   String name;
   String img;
   String weight;
-  Details_page(this.id,this.name,this.weight,this.img,this.index);
+  DetailsPage(this.id,this.name,this.weight,this.img,this.index);
 
   @override
-  State<Details_page> createState() => _Details_pageState();
+  State<DetailsPage> createState() => _DetailsPageState();
 }
 
-class _Details_pageState extends State<Details_page> {
+class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
