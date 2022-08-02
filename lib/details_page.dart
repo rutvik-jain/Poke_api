@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class Details_page extends StatefulWidget {
   int id;
-  String num;
+  int index;
   String name;
   String img;
   String weight;
-  Details_page(this.id,this.num,this.name,this.weight,this.img);
+  Details_page(this.id,this.name,this.weight,this.img,this.index);
 
   @override
   State<Details_page> createState() => _Details_pageState();
@@ -32,7 +32,8 @@ class _Details_pageState extends State<Details_page> {
               child: Column(
                 children: [
                   Hero(
-                    tag: 'img1',
+                    transitionOnUserGestures: true,
+                    tag: 'image'+widget.index.toString(),
                     child: Align(
                       alignment: Alignment.center,
                         heightFactor: 0,

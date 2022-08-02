@@ -13,7 +13,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
 
 Post? posts;
-var isLoaded = false;
+bool isLoaded = false;
 
   @override
 
@@ -48,7 +48,7 @@ getData() async {
           child: GridView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),
-              itemCount: 16,
+              itemCount: posts!.pokemon.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 8,
@@ -58,9 +58,8 @@ getData() async {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(
                         builder: (BuildContext context){
-                          return Details_page(posts!.pokemon[index].id, posts!.pokemon[index].num,
-                              posts!.pokemon[index].name, posts!.pokemon[index].weight,
-                            posts!.pokemon[index].img,);
+                          return Details_page(posts!.pokemon[index].id, posts!.pokemon[index].name,
+                              posts!.pokemon[index].weight, posts!.pokemon[index].img,index);
                         }));
                   },
                   child:  Card(
@@ -69,7 +68,8 @@ getData() async {
                     child: Column(
                       children: [
                         Hero(
-                            tag: 'img$index',
+                          transitionOnUserGestures: true,
+                            tag: 'image'+index.toString(),
                             child: Image.network(posts!.pokemon[index].img,height: 90,width: 90,)),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
